@@ -7,3 +7,8 @@
   display: -ms-flexbox;
   display: flex;
 }
+
+@font-face {
+  font-family: "PretendardVariable";
+  src: url("./asset/fonts/PretendardVariable.ttf") format("truetype");
+}
