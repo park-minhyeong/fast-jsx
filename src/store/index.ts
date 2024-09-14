@@ -1,8 +1,9 @@
 import { create } from "zustand";
-import { Order, WidgetEvent } from "../interface";
+import { Order } from "../interface";
+import { ActionEvent } from "../interface/Action";
 
 interface WidgetProps {
-  events: WidgetEvent[];
+  events: ActionEvent[];
 
   setView: (prop: string) => void;
   removeView: (prop: string) => void;

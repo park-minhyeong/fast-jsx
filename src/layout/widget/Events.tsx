@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useWidgetStore } from "../../store";
-import { ReplaceProps, ShowProps } from "./../../interface";
+import { ReplaceProps, ShowProps } from "../../interface/Action";
 
 function Show({ widgets, children }: ShowProps) {
   const { events } = useWidgetStore();

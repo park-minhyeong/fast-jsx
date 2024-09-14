@@ -20,7 +20,14 @@ export interface ActionProps {
   replaces?: Replace[];
   shows?: Show[];
 }
-
+export interface ShowProps {
+  widgets?: Show[];
+  children: React.ReactNode;
+}
+export interface ReplaceProps {
+  widgets?: Replace[];
+  children: React.ReactNode;
+}
 export interface DataFieldProps<T> {
   id: string;
   dataField?: DataField<T>;
