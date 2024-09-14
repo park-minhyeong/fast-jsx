@@ -1,3 +1,3 @@
 export default function GrowPlanPage() {
-  return <div></div>;
+  return <div>GROWPLAN</div>;
 }
