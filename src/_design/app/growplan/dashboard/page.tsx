@@ -18,7 +18,7 @@ function Board({ text }: { text: Text }) {
   const container = {
     displays: "flex flex-col gap-y-3.5",
     sizes: "w-full h-full",
-    boundaries: "shadow-md pt-2.5 px-3.5 rounded-[12px]",
+    boundaries: "md:shadow-md pt-2.5 px-3.5 rounded-[12px]",
   };
   return (
     <div className={cn(container)}>

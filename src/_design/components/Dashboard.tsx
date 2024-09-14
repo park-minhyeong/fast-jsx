@@ -49,6 +49,7 @@ function Menu() {
   const container = {
     positions: "fixed bottom-0 left-0 md:static",
     displays: "flex md:flex-col gap-y-0.5",
+    backgrounds: "bg-white",
     sizes: "w-full md:w-[16%] min-w-32",
   };
   const button = (isSelected: boolean) => ({
