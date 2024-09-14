@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ComponentType, Fragment } from "react";
 import useRoute from "./_design/hook/useRoute";
+import GrowPlanPage from "./_design/app/growplan/page";
 
 export default function App() {
   const routes = useRoute();
   return (
     <BrowserRouter>
       <Routes>
-        {routes.map(({ path, component, layout }) => {
+        {/* {routes.map(({ path, component, layout }) => {
           return (
             <Route
               key={path}
@@ -16,6 +17,8 @@ export default function App() {
             />
           );
         })}
+        */}
+        <Route path="/growplan" element={<GrowPlanPage />} />
         <Route
           path="*"
           element={
