@@ -6,7 +6,6 @@ interface WidgetProps {
 
   setView: (prop: string) => void;
   removeView: (prop: string) => void;
-
   setModal: (prop: string) => void;
   removeModal: (prop: string) => void;
   clearModal: () => void;
