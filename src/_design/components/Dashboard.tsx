@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from "react";
 import { cn } from "../../util";
 import classNames from "../../util/classNames";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Header } from "../app/growplan/layout";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const container = {
@@ -13,9 +14,12 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     sizes: "w-full h-[600px]",
   };
   return (
-    <div className={cn(container)}>
-      <Menu />
-      <div className={cn(body)}>{children}</div>
+    <div>
+      <Header />
+      <div className={cn(container)}>
+        <Menu />
+        <div className={cn(body)}>{children}</div>
+      </div>
     </div>
   );
 }

@@ -1,17 +1,14 @@
 import { Text } from "../../../../interface";
 import { LineBreaks } from "../../../../text/LineBreaks";
 import { cn } from "../../../../util";
-import DashboardLayout from "../../../components/Dashboard";
 
 export default function DashboardPage() {
   return (
-    <DashboardLayout>
-      <Board
-        text={{
-          title: "홈",
-        }}
-      />
-    </DashboardLayout>
+    <Board
+      text={{
+        title: "홈",
+      }}
+    />
   );
 }
 

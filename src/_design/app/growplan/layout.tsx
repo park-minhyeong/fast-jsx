@@ -19,7 +19,7 @@ export default function GrowPlanLayout({ children }: { children: ReactNode }) {
   );
 }
 
-function Header() {
+export function Header() {
   const container = {
     positions: "fixed top-0 left-0",
     displays: "flex justify-between items-center",
