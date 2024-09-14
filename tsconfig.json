@@ -23,6 +23,6 @@
     /* Build */
     "outDir": "./build"
   },
-  "include": ["src", "./eslintrc.json", "setupPacakge.js"],
+  "include": ["src", "./eslintrc.json", "setupPackage.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
