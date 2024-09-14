@@ -17,7 +17,14 @@ export default function App() {
             />
           );
         })}
-        <Route path="*" element={<Loading />} />
+        <Route
+          path="*"
+          element={
+            <div className="flex justify-center items-center w-full min-h-screen">
+              <Loading />
+            </div>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
