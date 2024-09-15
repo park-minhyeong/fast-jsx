@@ -16,3 +16,28 @@
   font-family: "PretendardVariable";
   src: url("./asset/fonts/PretendardVariable.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Kostar";
+  src: url("./asset/fonts/Kostar.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NicoMoji";
+  src: url("./asset/fonts/NicoMoji.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Megrim";
+  src: url("./asset/fonts/Megrim.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Times-Newer-Roman-Bold";
+  src: url("./asset/fonts/TimesNewerRoman-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Times-Newer-Roman-BoldItalic";
+  src: url("./asset/fonts/TimesNewerRoman-BoldItalic.otf") format("opentype");
+}
