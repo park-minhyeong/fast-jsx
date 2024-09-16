@@ -5,12 +5,16 @@ import Navigator from "../components/Navigator";
 
 export default function RootPage() {
   const container = {
+    displays: "flex flex-col justify-center items-center",
+    sizes: "w-full min-h-screen",
+  };
+  const body = {
     displays: "flex flex-col gap-y-3.5 lg:flex-row items-center",
     sizes: "w-full",
   };
   return (
-    <>
-      <div className={cn(container)}>
+    <div className={cn(container)}>
+      <div className={cn(body)}>
         <div className="flex flex-col gap-y-3.5 items-center w-full lg:w-1/2">
           <img
             src="/images/fast-jsx.png"
@@ -35,6 +39,6 @@ export default function RootPage() {
       </div>
       {/* <Navigator /> */}
       <Contact />
-    </>
+    </div>
   );
 }

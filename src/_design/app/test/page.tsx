@@ -1,5 +1,7 @@
-import Loading from "../../../ui/Loading";
-
 export default function TestPage() {
-  return <Loading />;
+  return (
+    <div>
+      <div>안녕</div>
+    </div>
+  );
 }
