@@ -1,8 +1,8 @@
 import { ReactNode, useEffect } from "react";
-import { cn } from "../../util";
-import classNames from "../../util/classNames";
+import { cn } from "../../../util";
+import classNames from "../../../util/classNames";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Header } from "../app/growplan/layout";
+import { Header } from "../../app/growplan/layout";
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const container = {
