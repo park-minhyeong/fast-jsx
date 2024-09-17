@@ -15,5 +15,5 @@ export default function ConfigPage() {
       }, 1000);
     }
   }, []);
-  return <Loading />;
+  return <Loading.Spinner />;
 }
