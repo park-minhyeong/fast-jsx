@@ -67,6 +67,7 @@ export default {
         "gray-light": "#F0F0F0",
         "gray-light-super": "#D9D9D9",
         "gray-medium": "#7F7F7F",
+        "gray-terminal": "#333333",
         "gray-dim": "#4C4C4C",
         "gray-dark": "#4C4C4C",
         "silver-lavender": "#E7E9F2",
