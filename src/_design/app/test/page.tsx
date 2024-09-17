@@ -1,7 +1,9 @@
+import Loading from "../../../ui/Loading";
+
 export default function TestPage() {
   return (
-    <div>
-      <div>안녕</div>
+    <div className="flex justify-center items-center min-h-screen w-full">
+      <Loading />
     </div>
   );
 }
