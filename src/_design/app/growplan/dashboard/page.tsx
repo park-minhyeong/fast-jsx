@@ -1,6 +1,6 @@
 import { Text } from "../../../../interface";
 import { Shelf } from "../../../../layout";
-import { LineBreaks } from "../../../../text/LineBreaks";
+import { LineBreaks } from "../../../../text";
 import { cn } from "../../../../util";
 
 export default function DashboardPage() {
