@@ -1,4 +1,4 @@
-import { LineBreaks } from "../../text/LineBreaks";
+import { LineBreaks } from "../..";
 import { cn } from "../../util";
 import Contact from "../components/Contact";
 import Navigator from "../components/Navigator";
