@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ComponentType, Fragment } from "react";
-import useRoute from "./_design/hook/useRoute";
+import useRoute from "./hook/useRoute";
 import Loading from "./ui/Loading";
 
 export default function App() {
