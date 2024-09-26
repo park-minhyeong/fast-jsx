@@ -1,5 +1,5 @@
 import { ShelfProps } from "../../interface/Shelf";
-import { LineBreaks } from "../../text/LineBreaks";
+import { LineBreaks } from "../../text";
 import { cn } from "../../util";
 
 export default function Shelf<T extends string | number>({
