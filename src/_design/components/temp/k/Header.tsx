@@ -1,5 +1,6 @@
 import { cn } from "../../../../util";
 import { Button } from "../../../..";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const container = {
@@ -10,13 +11,14 @@ export default function Header() {
     styles: "shadow-md",
     boundaries: "px-3.5",
   };
+  const router = useNavigate();
 
   return (
     <>
       <div className={cn(container)}>
         <div>PROJECT K</div>
         <div className="flex">
-          <Button title="some" onClick={() => {}} />
+          <Button title="some" onClick={() => router("/temp/k/dashboard")} />
         </div>
       </div>
       <div className={cn(container.sizes)} />
