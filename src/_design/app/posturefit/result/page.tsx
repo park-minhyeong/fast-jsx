@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { cn } from "../../../../util";
-import { LineBreaks } from "../../../../text/LineBreaks";
+import { LineBreaks } from "../../../../text";
 
 type Size = "M" | "XL";
 interface Item {

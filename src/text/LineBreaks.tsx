@@ -1,4 +1,4 @@
-export function LineBreaks({
+export default function LineBreaks({
   texts,
   className,
 }: {
