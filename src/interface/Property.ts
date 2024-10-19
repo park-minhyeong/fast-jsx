@@ -33,11 +33,6 @@ export type State<T> = [T, StateAction<T>];
  * @property {"full"} full - Full size
  */
 export type Size =
-  | "xxxs"
-  | "xxs"
-  | "mmd"
-  | "xm"
-  | "ml"
   | "5xs"
   | "4xs"
   | "3xs"
