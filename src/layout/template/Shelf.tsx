@@ -1,4 +1,4 @@
-import { ShelfProps } from "../../interface/Shelf";
+import { ShelfDesignProps } from "../../interface/Shelf";
 import { cn } from "../../util";
 import ShelfDesign from "../design/Shelf.design";
 
@@ -9,17 +9,22 @@ const gap = {
   none: "gap-0",
 };
 
-function Shelf({ titles, debug, children }: ShelfProps<string | number>) {
+interface ShelfProps
+  extends Omit<ShelfDesignProps<string | number>, "className"> {}
+
+function Shelf({ titles, action, debug, children, option }: ShelfProps) {
   const container = {
     displays: "inline-flex flex-col gap-12",
   };
   return (
     <ShelfDesign
       titles={titles}
+      action={action}
       className={cn(container)}
       debug={debug}
       option={{
         titleSize: "text-lg xl:text-2xl",
+        ...option,
       }}
     >
       {children}
@@ -27,75 +32,81 @@ function Shelf({ titles, debug, children }: ShelfProps<string | number>) {
   );
 }
 
-function Wrap({
-  className,
-  titles,
-  children,
-  debug,
-  option,
-}: ShelfProps<string | number>) {
+function Center({ titles, action, children, option }: ShelfProps) {
   const container = {
-    displays: "flex flex-col lg:flex-row flex-wrap",
-    gaps: gap[option?.gap ?? "xy"],
-    className,
+    displays: "inline-flex flex-col gap-12 flex justify-center items-center",
   };
   return (
     <ShelfDesign
       titles={titles}
+      action={action}
       className={cn(container)}
       option={{
         titleSize: "text-lg xl:text-2xl",
-        subtitleSize: "text-sm",
+        height: "h-screen min-h-screen",
+        ...option,
       }}
-      debug={debug}
     >
       {children}
     </ShelfDesign>
   );
 }
-function Row({
-  titles,
-  children,
-  className,
-  debug,
-}: ShelfProps<string | number>) {
+function Wrap({ titles, action, children, option }: ShelfProps) {
   const container = {
-    displays: "flex flex-col lg:flex-row",
-    className: className ?? "gap-x-7.5",
+    displays: "flex flex-col lg:flex-row flex-wrap",
+    gaps: gap[option?.gap ?? "xy"],
   };
   return (
     <ShelfDesign
       titles={titles}
+      action={action}
+      className={cn(container)}
+      option={{
+        titleSize: "text-lg xl:text-2xl",
+        subtitleSize: "text-sm",
+        ...option,
+      }}
+    >
+      {children}
+    </ShelfDesign>
+  );
+}
+function Row({ titles, action, children, option }: ShelfProps) {
+  const container = {
+    displays: "flex flex-col lg:flex-row",
+    className: "gap-x-7.5",
+  };
+  return (
+    <ShelfDesign
+      titles={titles}
+      action={action}
       className={cn(container)}
       option={{
         titleSize: "text-lg xl:text-2xl",
         subtitleSize: "text-sm",
         isSize: true,
+        ...option,
       }}
-      debug={debug}
     >
       {children}
     </ShelfDesign>
   );
 }
 
-function Col({
-  titles,
-  children,
-  debug,
-  className,
-}: ShelfProps<string | number>) {
+function Col({ titles, action, children, debug, option }: ShelfProps) {
   const container = {
     displays: "flex flex-col lg:flex-wrap",
-    className: className ?? "gap-y-7.5",
+    className: option?.display ?? "gap-y-7.5",
   };
   return (
     <ShelfDesign
-      titles={titles}
       className={cn(container)}
+      action={action}
+      titles={titles}
       option={{
         titleSize: "text-lg xl:text-2xl",
         subtitleSize: "text-sm",
+        ...option,
       }}
       debug={debug}
     >
@@ -104,6 +115,7 @@ function Col({
   );
 }
 
+Shelf.Center = Center;
 Shelf.Wrap = Wrap;
 Shelf.Row = Row;
 Shelf.Col = Col;
