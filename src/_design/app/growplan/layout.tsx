@@ -4,6 +4,7 @@ import { Button } from "../../../widget";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function GrowPlanLayout({ children }: { children: ReactNode }) {
+  const path = useLocation().pathname;
   const container = {
     displays: "flex flex-col ",
     sizes: "w-full min-h-screen",
@@ -11,6 +12,8 @@ export default function GrowPlanLayout({ children }: { children: ReactNode }) {
     styles: "scrollbar-hidden",
   };
 
+  const whitelist = ["/growplan/sign-in", "/growplan/sign-up"];
+  if (whitelist.includes(path)) return <>{children}</>;
   return (
     <div className={cn(container)}>
       <Header />
