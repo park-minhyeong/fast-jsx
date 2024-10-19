@@ -1,7 +1,11 @@
-type ClassNames = string | { [key: string]: string | undefined | false };
+type ClassNames =
+  | undefined
+  | string
+  | { [key: string]: string | undefined | false };
 
 export default function classNames(...props: ClassNames[]) {
   const classNames = props.reduce<string[]>((acc, cur) => {
+    if (typeof cur === "undefined") return acc;
     if (typeof cur === "string") {
       return [...acc, cur];
     }
