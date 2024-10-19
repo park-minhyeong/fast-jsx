@@ -45,7 +45,14 @@ function Board({ text }: { text: Text }) {
           />
         </div>
       </Shelf.Col>
-      <Shelf.Col className="box-shadow  w-full max-w-160 h-32 p-3.5 rounded-md ">
+      <Shelf.Col
+        option={{
+          width: " w-full max-w-160",
+          height: " h-32 ",
+          boundary: "box-shadow rounded-md ",
+          pressure: "p-3.5",
+        }}
+      >
         <div className="text-[#4163f6] text-xl font-bold">AI 예측</div>
         <LineBreaks
           texts={[

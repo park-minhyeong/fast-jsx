@@ -9,8 +9,7 @@ const gap = {
   none: "gap-0",
 };
 
-interface ShelfProps
-  extends Omit<ShelfDesignProps<string | number>, "className"> {}
+interface ShelfProps extends Omit<ShelfDesignProps, "className"> {}
 
 function Shelf({ titles, action, debug, children, option }: ShelfProps) {
   const container = {
@@ -54,7 +53,6 @@ function Center({ titles, action, children, option }: ShelfProps) {
 function Wrap({ titles, action, children, option }: ShelfProps) {
   const container = {
     displays: "flex flex-col lg:flex-row flex-wrap",
-    gaps: gap[option?.gap ?? "xy"],
   };
   return (
     <ShelfDesign

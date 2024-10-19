@@ -84,13 +84,7 @@ export default function ModalProvider(props: ModalProps) {
   );
 }
 
-function ModalDesign({
-  titles,
-  showAction,
-  children,
-  option,
-  debug,
-}: ModalProps) {
+function ModalDesign({ titles, showAction, children, option }: ModalProps) {
   const { removeModal } = useActionStore();
   const { width, height, noClose, boundary, position } = option ?? {};
   const { event } = showAction ?? {};

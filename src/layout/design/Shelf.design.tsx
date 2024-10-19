@@ -3,9 +3,7 @@ import { LineBreaks } from "../../text";
 import { cn } from "../../util";
 import Action from "../template/Action";
 
-export default function Shelf<T extends string | number>(
-  props: ShelfDesignProps<T>
-) {
+export default function Shelf(props: ShelfDesignProps) {
   const { title, subtitle, titleColor } = props.titles ?? {};
   const {
     width,
