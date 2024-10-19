@@ -2,11 +2,12 @@ import { create } from "zustand";
 import { Order } from "../interface";
 import { ActionEvent } from "../interface/Action";
 
-interface WidgetProps {
+interface ActionProps<T = any> {
   events: ActionEvent[];
-
   setView: (prop: string) => void;
   removeView: (prop: string) => void;
+  clearView: () => void;
+
   setModal: (prop: string) => void;
   removeModal: (prop: string) => void;
   clearModal: () => void;
@@ -23,23 +24,42 @@ interface WidgetProps {
   // Controll tag state
   flag: boolean;
   setFlag: () => void;
+  isOwn: boolean | string;
+  setIsOwn: (prop: boolean | string) => void;
+  isOwnId: string;
+  setIsOwnId: (prop: string) => void;
 
   // Controll Dark Mode
   isDark: boolean;
+  dark: () => void;
   setDark: () => void;
+
+  // stateItems
+  items: T[];
+  setItems: (prop: T[]) => void;
+  updateItem: (prop: T, key: string | string[]) => void;
 }
 
-export const useWidgetStore = create<WidgetProps>((set) => ({
+export const useActionStore = create<ActionProps>((set) => ({
   events: [],
   setView: (prop) =>
-    set((state) => ({
-      events: [...state.events, { event: prop, type: "view" }],
-    })),
+    set((state) => {
+      state.setIsOwn(true);
+      if (state.events.find(({ event }) => event === prop) !== undefined)
+        return state;
+      return {
+        events: [...state.events, { event: prop, type: "view" }],
+      };
+    }),
   removeView: (prop) => {
     set((state) => ({
       events: state.events.filter(({ event }) => event !== prop),
     }));
   },
+  clearView: () =>
+    set((state) => ({
+      events: state.events.filter(({ type }) => type !== "view"),
+    })),
 
   order: {},
   setOrder: (id, prop) => {
@@ -92,6 +112,30 @@ export const useWidgetStore = create<WidgetProps>((set) => ({
   flag: false,
   setFlag: () => set((state) => ({ flag: !state.flag })),
 
+  isOwn: false,
+  setIsOwn: (prop) => set({ isOwn: prop }),
+  isOwnId: "",
+  setIsOwnId: (prop) => set({ isOwnId: prop }),
+
   isDark: false,
+  dark: () => set(() => ({ isDark: true })),
   setDark: () => set((state) => ({ isDark: !state.isDark })),
+
+  items: [],
+  setItems: (prop) => set({ items: prop }),
+  updateItem: (item, key) =>
+    set((state) => ({
+      items: state.items.map((prevItem) => {
+        if (typeof key === "string")
+          return prevItem.id === item.id
+            ? { ...prevItem, [key]: item[key] }
+            : prevItem;
+        return prevItem.id === item.id
+          ? {
+              ...prevItem,
+              ...key.reduce((acc, cur) => ({ ...acc, [cur]: item[cur] }), {}),
+            }
+          : prevItem;
+      }),
+    })),
 }));
