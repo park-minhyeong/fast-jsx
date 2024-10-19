@@ -7,7 +7,7 @@ import { Header } from "../../app/growplan/layout";
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const container = {
     displays: "flex gap-x-3.5",
-    boundaries: "p-3.5",
+    boundaries: "p-1.5",
   };
   const body = {
     displays: "flex flex-col",
@@ -34,15 +34,15 @@ function Menu() {
       href: "/growplan/dashboard",
     },
     {
-      title: "측정",
-      href: "/growplan/dashboard/measure",
-    },
-    {
       title: "기록",
       href: "/growplan/dashboard/records",
     },
     {
-      title: "설정",
+      title: "콘텐츠",
+      href: "/growplan/dashboard/contents",
+    },
+    {
+      title: "마이페이지",
       href: "/growplan/dashboard/config",
     },
   ];

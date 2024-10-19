@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { cn } from "../../../util";
 import { Button } from "../../../widget";
 import { useNavigate, useLocation } from "react-router-dom";
