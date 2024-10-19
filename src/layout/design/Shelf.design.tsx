@@ -1,18 +1,28 @@
-import { ShelfProps } from "../../interface/Shelf";
+import { ShelfDesignProps } from "../../interface/Shelf";
 import { LineBreaks } from "../../text";
 import { cn } from "../../util";
+import Action from "../template/Action";
 
-export default function Shelf<T extends string | number>({
-  children,
-  className,
-  option,
-  titles,
-}: ShelfProps<T>) {
-  const { title, titleColor } = titles ?? {};
-  const { titleSize, subtitleSize, isSize } = option ?? {};
+export default function Shelf<T extends string | number>(
+  props: ShelfDesignProps<T>
+) {
+  const { title, subtitle, titleColor } = props.titles ?? {};
+  const {
+    width,
+    height,
+    titleSize,
+    subtitleSize,
+    background,
+    boundary,
+    pressure,
+  } = props.option ?? {};
   const container = {
     displays: "flex flex-col gap-6",
-    sizes: isSize && "w-full h-full lg:h-auto",
+    widths: width ?? "w-full",
+    heights: height ?? " h-auto",
+    backgrounds: background,
+    boundaries: boundary,
+    pressures: pressure,
   };
   const titleBox = {
     container: "flex flex-col h-6 leading-none",
@@ -25,23 +35,21 @@ export default function Shelf<T extends string | number>({
       text: subtitleSize ?? "text-base xl:text-lg",
     },
   };
-
   const childrenBox = {
     sizes: "w-full h-full",
-    className,
+    classNames: props?.className,
   };
   return (
     <div className={cn(container)}>
-      {titles && (
-        <div className={cn(titleBox.container)}>
-          <div className={cn(titleBox.title)}>{title}</div>
-          <LineBreaks
-            className={cn(titleBox.subtitle)}
-            texts={titles?.subtitle}
-          />
-        </div>
-      )}
-      <div className={cn(childrenBox)}>{children}</div>
+      <Action.Show actions={props.action?.shows}>
+        {props.titles && (
+          <div className={cn(titleBox.container)}>
+            <div className={cn(titleBox.title)}>{title}</div>
+            <LineBreaks className={cn(titleBox.subtitle)} texts={subtitle} />
+          </div>
+        )}
+        <div className={cn(childrenBox)}>{props.children}</div>
+      </Action.Show>
     </div>
   );
 }
