@@ -5,12 +5,16 @@ interface Option<T> {
   titleSize?: string;
   subtitleSize?: string;
   overflowScroll?: boolean;
-  width?: T;
-  height?: number;
+  width?: string;
+  height?: string;
+  background?: string;
+  boundary?: string;
+  pressure?: string;
+  display?: string;
   gap?: "xy" | "x" | "y" | "none";
   isSize?: boolean;
 }
-export interface ShelfProps<T> {
+export interface ShelfDesignProps<T> {
   children: React.ReactNode;
   action?: ActionProps;
   titles?: Titles;
