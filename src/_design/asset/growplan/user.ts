@@ -22,6 +22,7 @@ type DevelopmentType =
   | "social";
 
 interface DevelopmentCheck {
+  id: number;
   type: DevelopmentType;
   script: string;
   status: number;
