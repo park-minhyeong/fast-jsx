@@ -11,6 +11,7 @@ interface Option {
   font?: string;
   textColor?: string;
   pressure?: string;
+  position?: string;
 }
 
 interface InputProps {
@@ -25,10 +26,10 @@ export default function Input(props: InputProps) {
   const [value, setValue] = props.state;
   const [isEyeOpen, setIsEyeOpen] = useState<boolean>(false);
   const ref = useRef<HTMLInputElement>(null);
-  const { width, height, boundary, pressure, textColor, font } =
+  const { width, height, boundary, pressure, textColor, font, position } =
     props.option ?? {};
   const container = {
-    positions: "relative",
+    positions: position ?? "relative",
     displays: "flex items-center",
     widths: width ?? "w-full",
     heights: height ?? "h-12",

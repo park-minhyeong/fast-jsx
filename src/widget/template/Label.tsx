@@ -3,6 +3,7 @@ import { cn } from "../../util";
 interface LabelProps {
   title: string;
   option?: {
+    position?: string;
     width?: string;
     height?: string;
     background?: string;
@@ -14,9 +15,18 @@ interface LabelProps {
 }
 
 export default function Label(props: LabelProps) {
-  const { background, textColor, font, width, height, boundary, pressure } =
-    props.option ?? {};
+  const {
+    position,
+    background,
+    textColor,
+    font,
+    width,
+    height,
+    boundary,
+    pressure,
+  } = props.option ?? {};
   const container = {
+    positions: position,
     displays: "flex justify-center items-center",
     backgrounds: background ?? "bg-black ",
     texts: textColor ?? "text-white",

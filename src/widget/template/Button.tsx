@@ -12,13 +12,23 @@ export interface ButtonProps {
     font?: string;
     boundary?: string;
     pressure?: string;
+    position?: string;
   };
 }
 
 export default function Button(props: ButtonProps) {
-  const { background, textColor, font, width, height, boundary, pressure } =
-    props.option ?? {};
+  const {
+    position,
+    background,
+    textColor,
+    font,
+    width,
+    height,
+    boundary,
+    pressure,
+  } = props.option ?? {};
   const container = {
+    positions: position,
     displays: "flex justify-center items-center",
     backgrounds: background ?? "bg-black ",
     texts: textColor ?? "text-white",
