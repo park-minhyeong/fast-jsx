@@ -1,5 +1,5 @@
 import { Replace } from "./Action";
-import { Click, OnClick, State, StateAction, Titles } from "./Property";
+import { Click, OnClick, Titles } from "./Property";
 
 export interface DataPackage<T> {
   dataField: DataField<T>;
