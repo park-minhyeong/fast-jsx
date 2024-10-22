@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { cn } from "../../../util";
 import classNames from "../../../util/classNames";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -53,9 +53,9 @@ function Menu() {
     sizes: "w-full md:w-[16%] min-w-32",
   };
   const button = (isSelected: boolean) => ({
-    displays: "flex justify-start",
+    displays: "flex justify-center md:justify-start",
     sizes: "w-full md:w-auto",
-    boundaries: "pl-3.5 py-1.5 rounded-md",
+    boundaries: "md:pl-3.5 py-1.5 rounded-md",
     backgrounds: isSelected ? "bg-[#4163f6]" : "hover:bg-[#4163f6]/10",
     texts: isSelected ? "text-white" : "text-[#4163f6]",
     animations: "duration-500",
