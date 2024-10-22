@@ -2,7 +2,8 @@ interface User {
   id: number;
   name: string;
 }
-const users: User[] = [
+
+export const users: User[] = [
   {
     id: 1,
     name: "김이름",
@@ -10,6 +11,18 @@ const users: User[] = [
   {
     id: 2,
     name: "박이름",
+  },
+];
+
+export const childs: Child[] = [
+  {
+    id: 1,
+    name: "최이름",
+    gender: "female",
+    birthdate: "2021-01-01",
+    bornHeight: 180,
+    bornWeight: 80,
+    createdAt: new Date(),
   },
 ];
 
@@ -28,9 +41,13 @@ interface DevelopmentCheck {
   status: number;
 }
 
+type Gender = "male" | "female";
 interface Child {
   id: number;
   name: string;
   birthdate: string;
-  development: Record<DevelopmentType, number>;
+  gender: Gender;
+  bornHeight: number;
+  bornWeight: number;
+  createdAt: Date;
 }
