@@ -15,7 +15,7 @@ interface Option {
 }
 
 interface InputProps {
-  state: State<string | undefined>;
+  state: State<string> | State<string | undefined>;
   onKeyDown?: (e: React.KeyboardEvent, value: string) => void;
   type?: "text" | "password" | "email" | "number" | "tel" | "url" | "search";
   titles?: Titles;
