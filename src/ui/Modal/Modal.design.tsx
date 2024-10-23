@@ -86,12 +86,13 @@ export default function ModalProvider(props: ModalProps) {
 
 function ModalDesign({ titles, showAction, children, option }: ModalProps) {
   const { removeModal } = useActionStore();
-  const { width, height, noClose, boundary, position } = option ?? {};
+  const { width, height, noClose, boundary, position, className } =
+    option ?? {};
   const { event } = showAction ?? {};
   const container = {
     paddings: "p-5 md:p-5",
     sizes: `${heightSize[height ?? "md"]} ${widthSize[width ?? "md"]}`,
-    styles: "rounded-xl bg-white relative overflow-hidden",
+    styles: "rounded-xl bg-white relative overflow-hidden ",
     shadows: !!position && (boundary ?? "box-shadow"),
   };
   const titleBox = {
@@ -109,7 +110,7 @@ function ModalDesign({ titles, showAction, children, option }: ModalProps) {
           className="mt-3.5 text-base leading-none"
         />
       </div>
-      <div>{children}</div>
+      <div className={cn(className)}>{children}</div>
       {!noClose && event && (
         <SVG.Close
           onClick={() => removeModal(event)}
