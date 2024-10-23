@@ -109,7 +109,7 @@ function ModalDesign({ titles, showAction, children, option }: ModalProps) {
           className="mt-3.5 text-base leading-none"
         />
       </div>
-      <div className="overflow-hidden">{children}</div>
+      <div>{children}</div>
       {!noClose && event && (
         <SVG.Close
           onClick={() => removeModal(event)}
