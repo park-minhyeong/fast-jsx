@@ -16,6 +16,7 @@ interface Option {
 
 interface InputProps {
   state: State<string> | State<string | undefined>;
+  placeholder?: string;
   onKeyDown?: (e: React.KeyboardEvent, value: string) => void;
   type?: "text" | "password" | "email" | "number" | "tel" | "url" | "search";
   titles?: Titles;
@@ -60,6 +61,7 @@ export default function Input(props: InputProps) {
         <input
           value={value}
           type={props.type ?? "text"}
+          placeholder={props.placeholder ?? "입력해주세요."}
           onChange={(e) => setValue(e.target.value)}
           className={cn(body)}
           onKeyDown={(e) => props.onKeyDown && props.onKeyDown(e, value ?? "")}
