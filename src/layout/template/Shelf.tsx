@@ -14,6 +14,7 @@ interface ShelfProps extends Omit<ShelfDesignProps, "className"> {}
 function Shelf({ titles, action, debug, children, option }: ShelfProps) {
   const container = {
     displays: "inline-flex flex-col gap-12",
+    styles: "overflow-hidden",
   };
   return (
     <ShelfDesign
