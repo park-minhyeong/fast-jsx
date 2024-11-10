@@ -73,6 +73,7 @@ export default {
         "silver-lavender": "#E7E9F2",
         "silver-latte": "#FBF3E4",
         "silver-pale": "#DFD8CA",
+        "blue-sky-light": "#BDD3FF",
       },
       maxHeight: {
         44: "11rem",
