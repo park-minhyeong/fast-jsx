@@ -7,7 +7,7 @@ import { Header } from "../../app/growplan/layout";
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const container = {
     displays: "flex gap-x-3.5",
-    boundaries: "p-1.5",
+    paddings: "px-5",
   };
   const body = {
     displays: "flex flex-col",
