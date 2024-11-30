@@ -53,7 +53,7 @@ function Replace({ actions, children }: ReplaceProps) {
     .map(([flag, Component], index) => {
       if (typeof flag === "string") {
         return events?.some(({ event }) => event === flag) ? (
-          <>{Component}</>
+          <Fragment key={flag}>{Component}</Fragment>
         ) : null;
       }
       return <Fragment key={index}>{Component}</Fragment>;
