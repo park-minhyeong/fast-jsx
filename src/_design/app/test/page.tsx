@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Action, Button, Input, Modal, Shelf } from "../../..";
+import { Action, Button, Input, Modal, Select, Shelf } from "../../..";
 import Loading from "../../../ui/Loading";
 
 export default function TestPage() {
@@ -24,14 +24,22 @@ export default function TestPage() {
             <Input
               state={[password, setPassword]}
               type="password"
-              onKeyDown={(e) => {}}
+              onKeyDown={(e) => { }}
             />
             <Button
               title="asdf"
-              onClick={() => {}}
+              onClick={() => { }}
               option={{
                 height: "h-12",
               }}
+            />
+            <Select
+              state={[username, setUsername]}
+              selectOptions={[
+                [1, "1"],
+                [2, "2"],
+                [3, "3"],
+              ]}
             />
           </Modal>,
         ],
