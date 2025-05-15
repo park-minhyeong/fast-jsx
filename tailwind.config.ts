@@ -587,29 +587,6 @@ export default {
       },
     },
   },
-  safelist: [
-    {
-      pattern: /top-.*/,
-    },
-    {
-      pattern: /-top-.*/,
-    },
-    {
-      pattern: /bottom*.*/,
-    },
-    {
-      pattern: /left-.*/,
-    },
-    {
-      pattern: /-left-.*/,
-    },
-    {
-      pattern: /right*.*/,
-    },
-    {
-      pattern: /delay-.*/,
-    },
-  ],
   plugins: [
     tailwindcssAnimate,
     function ({ addUtilities }: PluginAPI) {
