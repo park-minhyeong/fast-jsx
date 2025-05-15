@@ -2,7 +2,7 @@ import { OnClick } from "../../interface/OnClick";
 import { cn } from "../../util";
 
 export interface ButtonProps {
-  title: string;
+  name: string;
   onClick: OnClick;
   option?: {
     width?: string;
@@ -39,7 +39,7 @@ export default function Button(props: ButtonProps) {
   };
   return (
     <button onClick={props.onClick} className={cn(container)}>
-      {props.title}
+      {props.name}
     </button>
   );
 }
