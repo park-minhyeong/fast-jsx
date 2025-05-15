@@ -103,7 +103,7 @@ function CheckList() {
           <div className={cn(box)}>{survey.script}</div>
         ))}
       </div>
-      <Button title="아이의 발달의 상태 기록하기" onClick={() => {}} />
+      <Button name="아이의 발달의 상태 기록하기" onClick={() => {}} />
     </Shelf.Col>
   );
 }

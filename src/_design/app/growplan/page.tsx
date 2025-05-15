@@ -27,7 +27,7 @@ export default function GrowPlanPage() {
         />
       </div>
       <Button
-        title="로그인"
+        name="로그인"
         onClick={() => router("/growplan/sign-in")}
         option={{
           width: "w-full max-w-64",

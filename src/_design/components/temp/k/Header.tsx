@@ -18,7 +18,7 @@ export default function Header() {
       <div className={cn(container)}>
         <div>PROJECT K</div>
         <div className="flex">
-          <Button title="some" onClick={() => router("/temp/k/dashboard")} />
+          <Button name="some" onClick={() => router("/temp/k/dashboard")} />
         </div>
       </div>
       <div className={cn(container.sizes)} />

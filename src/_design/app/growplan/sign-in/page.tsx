@@ -63,12 +63,12 @@ export default function SignInPage() {
           onKeyDown={(e) => e.key === "Enter" && signIn()}
         />
         <Button
-          title="로그인"
+          name="로그인"
           onClick={() => signIn()}
           option={{ ...buttonStyle, pressure: "mt-auto" }}
         />
         <Button
-          title="회원가입"
+          name="회원가입"
           onClick={() => router("/growplan/sign-up")}
           option={buttonStyle}
         />

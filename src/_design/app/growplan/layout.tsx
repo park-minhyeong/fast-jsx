@@ -44,7 +44,7 @@ export function Header() {
           width={100}
         />
         <Button
-          title={isDashboard ? "홈으로" : "대시보드"}
+          name={isDashboard ? "홈으로" : "대시보드"}
           onClick={() =>
             router(isDashboard ? "/growplan" : "/growplan/dashboard")
           }
