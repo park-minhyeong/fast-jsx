@@ -9,6 +9,7 @@ interface Option {
   boundary?: string;
   border?: string;
   font?: string;
+  background?: string;
   textColor?: string;
   pressure?: string;
   position?: string;
@@ -27,14 +28,23 @@ export default function Input(props: InputProps) {
   const [value, setValue] = props.state;
   const [isEyeOpen, setIsEyeOpen] = useState<boolean>(false);
   const ref = useRef<HTMLInputElement>(null);
-  const { width, height, boundary, pressure, textColor, font, position } =
-    props.option ?? {};
+  const {
+    width,
+    height,
+    boundary,
+    pressure,
+    textColor,
+    font,
+    position,
+    background,
+  } = props.option ?? {};
   const container = {
     positions: position ?? "relative",
     displays: "flex items-center",
     widths: width ?? "w-full",
     heights: height ?? "h-12",
     boundaries: boundary ?? "border-2 rounded-md border-black",
+    background,
     fonts: font ?? "text-lg",
     textColors: textColor ?? "text-black",
     styles: "overflow-hidden ",
