@@ -16,18 +16,18 @@ export default function TestPage() {
         menus: [{ name: "asdf", link: "https://tosel.org" }],
       }}
     >
-      <Select state={[username, setUsername]} selectOptions={[{
-        value: "a",
-        title: "a",
-      }, {
-        value: "b",
-        title: "b",
-      }]}
-        option={{
-          border: "border-2 border-red-500",
-          radius: 'rounded-md'
+      <Select.Toggle
+        titles={{
+          title: username
         }}
-
+        state={[username, setUsername]}
+        selectOptions={[{
+          value: "a",
+          title: "a",
+        }, {
+          value: "b",
+          title: "b",
+        }]}
       />
       <TextArea state={[username, setUsername]}
         option={{
