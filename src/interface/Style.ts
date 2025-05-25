@@ -8,6 +8,8 @@ interface Style {
   pressure: string;
   position: string;
   radius: string;
+  padding: string;
+  custom: string;
 }
 
 interface StyleOption extends Partial<Style> { }
