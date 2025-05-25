@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 interface Style {
   width: string;
   height: string;
@@ -10,6 +12,8 @@ interface Style {
   radius: string;
   padding: string;
   custom: string;
+  leftNode?: ReactNode;
+  rightNode?: ReactNode;
 }
 
 interface StyleOption extends Partial<Style> { }
