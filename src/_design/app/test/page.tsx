@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DashboardProvider } from "../../..";
+import { DashboardProvider, Input } from "../../..";
 
 export default function TestPage() {
   const [username, setUsername] = useState<string>("");
@@ -16,7 +16,12 @@ export default function TestPage() {
         menus: [{ name: "asdf", link: "https://tosel.org" }],
       }}
     >
-      <div>hello World</div>
+      <Input state={[username, setUsername]}
+        option={{
+          background: 'bg-blue-500',
+          border: 'border-blue-500 border-2',
+          textColor: 'text-red-500'
+        }} />
     </DashboardProvider.Layout>
   );
 }
