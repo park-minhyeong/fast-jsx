@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DashboardProvider, Input } from "../../..";
+import { DashboardProvider, TextArea } from "../../..";
 
 export default function TestPage() {
   const [username, setUsername] = useState<string>("");
@@ -16,10 +16,13 @@ export default function TestPage() {
         menus: [{ name: "asdf", link: "https://tosel.org" }],
       }}
     >
-      <Input state={[username, setUsername]}
+      <TextArea state={[username, setUsername]}
         option={{
-          border: '',
-          textColor: 'text-red-500'
+          border: 'border-2 border-black',
+          textColor: 'text-red-500',
+          radius: 'rounded-lg',
+          background: 'bg-red-500'
+
         }} />
     </DashboardProvider.Layout>
   );
