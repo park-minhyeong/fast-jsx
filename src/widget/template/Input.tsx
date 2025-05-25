@@ -30,14 +30,14 @@ export default function Input(props: InputProps) {
     heights: height ?? "h-12",
     radius: props.option?.radius ?? "rounded-md",
     border: props.option?.border ?? "border-2 border-black",
-    fonts: font ?? "text-lg",
     textColors: textColor ?? "text-black",
     styles: "overflow-hidden ",
   };
   const body = {
-    styles: "border-transparent focus:border-transparent focus:ring-0",
+    styles: "border-transparent focus:border-transparent focus:ring-0 outline-none",
     pressures: pressure ?? "pl-2.5",
     sizes: "w-full h-full",
+    fonts: font ?? "text-lg",
     background: props.option?.background ?? "bg-white",
   };
   const titleBox = {

@@ -10,7 +10,7 @@ export default function SelectToggle({ state, selectOptions, titles }: SelectTog
 		positions: "relative",
 		displays: "flex items-center",
 		sizes: "w-[36px] h-[20px]",
-		backgrounds: isOff ? "bg-[#CFD0D2]" : "bg-green-dark",
+		backgrounds: isOff ? "bg-[#CFD0D2]" : "bg-[#699BFF]",
 		boundaries: "rounded-full p-0.5",
 	};
 	const controller = {

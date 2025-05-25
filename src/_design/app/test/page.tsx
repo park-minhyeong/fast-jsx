@@ -16,7 +16,14 @@ export default function TestPage() {
         menus: [{ name: "asdf", link: "https://tosel.org" }],
       }}
     >
-      <Select.Toggle
+      <Input
+        state={[username, setUsername]}
+        option={{
+          border: '',
+          font: 'text-[64px]'
+        }}
+      />
+      {/* <Select.Toggle
         titles={{
           title: username
         }}
@@ -28,15 +35,7 @@ export default function TestPage() {
           value: "b",
           title: "b",
         }]}
-      />
-      <TextArea state={[username, setUsername]}
-        option={{
-          border: 'border-2 border-black',
-          textColor: 'text-red-500',
-          radius: 'rounded-lg',
-          background: 'bg-red-500'
-
-        }} />
+      /> */}
     </DashboardProvider.Layout>
   );
 }
