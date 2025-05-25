@@ -8,7 +8,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build-publish": "rimraf ./dist && tsc -p tsconfig.build.json --noEmit false",
-    "publish": "npm run build-publish && node setupPackage.js && cd dist && npm publish"
+    "publish": "npm run build-publish && node setupPackage.js && cd dist && npm publish",
+    "upload": "npm run build && cd dist && node ../setupPackage.js && cd .. && npm version patch && node uploadPackage.js && git push && git push --tags"
   },
   "dependencies": {
     "react": "^18.2.0",
