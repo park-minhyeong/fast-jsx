@@ -32,6 +32,7 @@ export default function TestPage() {
               onClick: (value) => setSelects([...selects, String(value)])
             }}
             option={{
+              height: 'h-8',
               rightNode: <div className="w-12 h-12 bg-red-500" />
             }}
           />
