@@ -18,8 +18,7 @@ export default function TestPage() {
     >
       <Input state={[username, setUsername]}
         option={{
-          background: 'bg-blue-500',
-          border: 'border-blue-500 border-2',
+          border: '',
           textColor: 'text-red-500'
         }} />
     </DashboardProvider.Layout>
