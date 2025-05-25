@@ -12,6 +12,7 @@ interface Option {
   textColor?: string;
   pressure?: string;
   position?: string;
+  radius?: string;
 }
 
 interface InputProps {
@@ -40,7 +41,8 @@ export default function Input(props: InputProps) {
     displays: "flex items-center",
     widths: width ?? "w-full",
     heights: height ?? "h-12",
-    border: props.option?.border ?? "border-2 rounded-md border-black",
+    radius: props.option?.radius ?? "rounded-md",
+    border: props.option?.border ?? "border-2 border-black",
     fonts: font ?? "text-lg",
     textColors: textColor ?? "text-black",
     styles: "overflow-hidden ",
