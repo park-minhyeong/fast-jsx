@@ -46,7 +46,7 @@ export default function Input(props: InputProps) {
     styles: "overflow-hidden ",
   };
   const body = {
-    styles: "focus:outline-none outline-none",
+    styles: "border-transparent focus:border-transparent focus:ring-0",
     pressures: pressure ?? "pl-2.5",
     sizes: "w-full h-full",
     background: props.option?.background ?? "bg-white",
