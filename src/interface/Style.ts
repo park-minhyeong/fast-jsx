@@ -1,15 +1,15 @@
 interface Style {
-  position: string;
-  display: string;
   width: string;
   height: string;
-  padding: string;
   border: string;
-  background: string;
   font: string;
-  custom: string;
+  background: string;
+  textColor: string;
+  pressure: string;
+  position: string;
+  radius: string;
 }
 
-interface StyleOption extends Partial<Style> {}
+interface StyleOption extends Partial<Style> { }
 
 export type { StyleOption };

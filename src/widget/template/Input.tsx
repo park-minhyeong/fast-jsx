@@ -1,19 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { OnClick, State, Titles } from "../../interface";
+import { State, StyleOption, Titles } from "../../interface";
 import { cn } from "../../util";
 import SVG from "../../asset/SVG";
-
-interface Option {
-  width?: string;
-  height?: string;
-  border?: string;
-  font?: string;
-  background?: string;
-  textColor?: string;
-  pressure?: string;
-  position?: string;
-  radius?: string;
-}
 
 interface InputProps {
   state: State<string> | State<string | undefined>;
@@ -21,9 +9,8 @@ interface InputProps {
   onKeyDown?: (e: React.KeyboardEvent, value: string) => void;
   type?: "text" | "password" | "email" | "number" | "tel" | "url" | "search";
   titles?: Titles;
-  option?: Option;
+  option?: StyleOption;
 }
-
 export default function Input(props: InputProps) {
   const [value, setValue] = props.state;
   const [isEyeOpen, setIsEyeOpen] = useState<boolean>(false);
