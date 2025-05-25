@@ -1,17 +1,7 @@
-import { State, Titles } from "../../interface";
+import { State, StyleOption, Titles } from "../../interface";
 import { useCallback } from "react";
 import { cn } from "../../util";
 
-interface Option {
-  width?: string;
-  height?: string;
-  boundary?: string;
-  border?: string;
-  font?: string;
-  textColor?: string;
-  pressure?: string;
-  position?: string;
-}
 type SelectOptionTuple<T> = [T, string];
 type SelectOptionObject<T> = {
   value: T,
@@ -34,7 +24,7 @@ interface SelectProps {
   selectOptions: SelectOption<string | number>[];
   placeholder?: string;
   titles?: Titles;
-  option?: Option;
+  option?: StyleOption;
 }
 
 export default function Select(props: SelectProps) {
@@ -48,14 +38,15 @@ export default function Select(props: SelectProps) {
     [setValue]
   );
 
-  const { width, height, boundary, border, textColor, font, position } = option ?? {};
+  const { width, height, border, textColor, font, position } = option ?? {};
 
   const container = {
     positions: position ?? "relative",
     displays: "flex items-center",
     widths: width ?? "w-full",
     heights: height ?? "h-12",
-    boundaries: boundary ?? "border-2 rounded-md border-black",
+    boundaries: props.option?.border ?? "border-2 border-black",
+    radius: props.option?.radius ?? "rounded-md",
     fonts: font ?? "text-lg",
     textColors: textColor ?? "text-black",
     styles: "overflow-hidden hover:border-gray-600 focus-within:border-blue-500 transition-colors focus:outline-none",
