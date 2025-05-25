@@ -25,9 +25,9 @@ export default function SelectOptionBox({ selectOptions, option, state, onClick 
 	}
 	const optionStyle = {
 		display: 'flex items-center',
-		padding: option?.padding ?? 'pl-2.5',
+		padding: option?.padding ?? 'px-2.5',
 		background: 'bg-white',
-		border: 'border-red-500 border-1',
+		border: 'border-gray-500 border-b-1',
 		width: 'w-full',
 		height: option?.height ?? 'h-12',
 		cursor: 'cursor-pointer',
