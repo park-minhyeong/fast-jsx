@@ -6,7 +6,6 @@ import SVG from "../../asset/SVG";
 interface Option {
   width?: string;
   height?: string;
-  boundary?: string;
   border?: string;
   font?: string;
   background?: string;
@@ -31,20 +30,17 @@ export default function Input(props: InputProps) {
   const {
     width,
     height,
-    boundary,
     pressure,
     textColor,
     font,
     position,
-    background,
   } = props.option ?? {};
   const container = {
     positions: position ?? "relative",
     displays: "flex items-center",
     widths: width ?? "w-full",
     heights: height ?? "h-12",
-    boundaries: boundary ?? "border-2 rounded-md border-black",
-    background,
+    border: props.option?.border ?? "border-2 rounded-md border-black",
     fonts: font ?? "text-lg",
     textColors: textColor ?? "text-black",
     styles: "overflow-hidden ",
@@ -53,6 +49,7 @@ export default function Input(props: InputProps) {
     styles: "focus:outline-none ",
     pressures: pressure ?? "pl-2.5",
     sizes: "w-full h-full",
+    background: props.option?.background ?? "bg-white",
   };
   const titleBox = {
     textColors: props.titles?.titleColor ?? "text-black",
