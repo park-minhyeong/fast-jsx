@@ -24,8 +24,8 @@ export default function TestPage() {
         title: "b",
       }]}
         option={{
-          border: "border-2 border-blue-500",
-          radius: 'rounded-full'
+          border: "border-2 border-red-500",
+          radius: 'rounded-md'
         }}
 
       />

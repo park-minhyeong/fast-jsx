@@ -53,7 +53,7 @@ export default function Select(props: SelectProps) {
   };
 
   const selectStyles = {
-    styles: "focus:outline-none appearance-none cursor-pointer bg-white",
+    styles: "border-transparent focus:border-transparent focus:ring-0 outline-none focus:outline-none appearance-none cursor-pointer bg-white",
     sizes: "w-full h-full",
     paddings: "px-2.5",
   };
