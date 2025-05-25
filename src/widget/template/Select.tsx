@@ -1,6 +1,7 @@
-import { State, StyleOption, Titles } from "../../interface";
+import { State, StyleOption, Titles, toSelectOptionObject } from "../../interface";
 import { useCallback } from "react";
 import { cn } from "../../util";
+import SelectToggle from "./Select.Toggle";
 
 type SelectOptionTuple<T> = [T, string];
 type SelectOptionObject<T> = {
@@ -9,25 +10,15 @@ type SelectOptionObject<T> = {
   icon?: string
 }
 export type SelectOption<T> = SelectOptionTuple<T> | SelectOptionObject<T>
-export function toSelectOption<T>(
-  option: SelectOption<T>
-): SelectOptionObject<T> {
-  if (Array.isArray(option)) {
-    const [value, title] = option;
-    return { value, title };
-  } else {
-    return option;
-  }
-}
-interface SelectProps {
+
+export interface SelectProps {
   state: State<string> | State<string | undefined>;
   selectOptions: SelectOption<string | number>[];
   placeholder?: string;
   titles?: Titles;
   option?: StyleOption;
 }
-
-export default function Select(props: SelectProps) {
+function Select(props: SelectProps) {
   const { state, selectOptions, placeholder, titles, option } = props;
   const [value, setValue] = state;
 
@@ -63,7 +54,7 @@ export default function Select(props: SelectProps) {
     fonts: titles?.size ?? "text-lg",
   };
 
-  const normalizedOptions = selectOptions.map(toSelectOption);
+  const normalizedOptions = selectOptions.map(toSelectOptionObject);
 
   return (
     <div className="w-full">
@@ -90,3 +81,6 @@ export default function Select(props: SelectProps) {
     </div>
   );
 }
+Select.Toggle = SelectToggle
+
+export default Select
